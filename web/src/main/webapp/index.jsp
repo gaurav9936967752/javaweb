@@ -11,7 +11,7 @@
     <title>jenkins</title>
 </head>
 <body>
-  <h1>bla bla</h1>
+  <h1>This my Docker and Jenkins Project</h1>
   <p>
     This is a very simple example web page on a JSP.
   </p>
