@@ -11,7 +11,7 @@
     <title>jenkins</title>
 </head>
 <body>
-  <h1>This my Docker and Jenkins Project and this is triggered automatically</h1>
+  <h1>This my Docker and Jenkins Project and this is triggered automatically. ci cd pipeline</h1>
   <p>
     This is a very simple example web page on a JSP.
   </p>
