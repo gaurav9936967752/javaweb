@@ -13,7 +13,7 @@
 <body>
   <h1>welcome to the shubham page</h1>
   <p>
-    I have made changes
+    deleted this line
   </p>
 </body>
 </html>
