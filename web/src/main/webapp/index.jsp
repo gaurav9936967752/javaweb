@@ -11,9 +11,9 @@
     <title>jenkins</title>
 </head>
 <body>
-  <h1>ma chod di pipeline ne</h1>
+  <h1>checking blue plugin</h1>
   <p>
-    kaam kr rha hai bosdk
+    roger!!
   </p>
 </body>
 </html>
