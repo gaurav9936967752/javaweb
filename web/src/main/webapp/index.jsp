@@ -11,7 +11,7 @@
     <title>jenkins</title>
 </head>
 <body>
-  <h1>checking blue plugin</h1>
+  <h1>ma chod di bhaiya ji</h1>
   <p>
     roger!!!
   </p>
