@@ -11,9 +11,9 @@
     <title>jenkins</title>
 </head>
 <body>
-  <h1>checking poll scm</h1>
+  <h1>Test Project Demo</h1>
   <p>
-    roger!!!
+    Successful!!!
   </p>
 </body>
 </html>
