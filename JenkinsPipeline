@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    stages {
+        stage("checkout"){
+            steps{
+                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/shubhamkumar177/javaweb.git']])
+            }
+        }
+        stage ("build"){
+            steps{
+            sh "docker build -t 991028786975.dkr.ecr.us-east-1.amazonaws.com/app:v1 ."
+            }
+        }
+        stage ("push"){
+            steps{
+                sh "docker push 991028786975.dkr.ecr.us-east-1.amazonaws.com/app:v1 "
+            }
+        }
+    }
+}
