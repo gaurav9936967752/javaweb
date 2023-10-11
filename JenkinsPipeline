@@ -1,19 +1,31 @@
 pipeline {
     agent any
+    environment {
+        TAG = ""
+    }
     stages {
         stage("checkout"){
             steps{
+               
                 checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/shubhamkumar177/javaweb.git']])
+                 script {
+                    def TAG = sh(script: 'git rev-parse HEAD', returnStdout: true).trim()
+                }
             }
         }
         stage ("build"){
             steps{
-            sh "docker build -t 991028786975.dkr.ecr.us-east-1.amazonaws.com/app:v1 ."
+            sh "docker build -t 991028786975.dkr.ecr.us-east-1.amazonaws.com/app:$TAG ."
             }
         }
         stage ("push"){
             steps{
-                sh "docker push 991028786975.dkr.ecr.us-east-1.amazonaws.com/app:v1 "
+                sh "docker push 991028786975.dkr.ecr.us-east-1.amazonaws.com/app:$TAG "
+            }
+        }
+        stage ("Deploy") {
+            steps {
+                sh "helm upgrade --install javaweb helm -f ./helm/values.yaml --set image.tag=$TAG"
             }
         }
     }
