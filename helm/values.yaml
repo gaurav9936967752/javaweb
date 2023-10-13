@@ -5,7 +5,7 @@
 replicaCount: 2
 
 image:
-  repository: 991028786975.dkr.ecr.us-east-1.amazonaws.com/app
+  repository: 991028786975.dkr.ecr.us-east-1.amazonaws.com/javaweb
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
