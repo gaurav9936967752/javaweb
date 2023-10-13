@@ -9,18 +9,18 @@ pipeline {
                
                 checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/shubhamkumar177/javaweb.git']])
                  script {
-                    def TAG = sh(script: 'git rev-parse HEAD', returnStdout: true).trim()
+                    TAG = sh(script: 'git rev-parse HEAD', returnStdout: true).trim()
                 }
             }
         }
         stage ("build"){
             steps{
-            sh "docker build -t 991028786975.dkr.ecr.us-east-1.amazonaws.com/app:$TAG ."
+            sh "docker build -t 991028786975.dkr.ecr.us-east-1.amazonaws.com/javaweb:$TAG ."
             }
         }
         stage ("push"){
             steps{
-                sh "docker push 991028786975.dkr.ecr.us-east-1.amazonaws.com/app:$TAG "
+                sh "docker push 991028786975.dkr.ecr.us-east-1.amazonaws.com/javaweb:$TAG "
             }
         }
         stage ("Deploy") {
