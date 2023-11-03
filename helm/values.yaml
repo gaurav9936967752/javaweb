@@ -5,7 +5,7 @@
 replicaCount: 2
 
 image:
-  repository: 991028786975.dkr.ecr.us-east-1.amazonaws.com/javaweb
+  repository: public.ecr.aws/l3t3c1e6/shushtest
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
